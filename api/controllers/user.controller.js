@@ -80,7 +80,7 @@ export const getUsers = async (req, res, next) => {
     const sortDirection = req.query.sort === 'asc' ? 1 : -1;
 
     const users = await User.find()
-      .sort({ createAd: sortDirection })
+      .sort({ createdAt: sortDirection })
       .skip(startIndex)
       .limit(limit);
 
@@ -99,7 +99,7 @@ export const getUsers = async (req, res, next) => {
         now.getDate()
       );
       const lastMonthUsers = await User.countDocuments({
-        createAd: {$gte: oneMonthAgo},
+        createdAt: {$gte: oneMonthAgo},
       });
 
       res.status(200).json({
