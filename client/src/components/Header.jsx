@@ -13,17 +13,17 @@ export default function Header() {
     const { theme } = useSelector(state => state.theme);
     const handleSignout = async () => {
         try {
-          const res = await fetch('api/user/signout', {
+          const res = await fetch('/api/user/signout', {
             method: 'POST',
           });
           const data = await res.json();
-          if(!res.ok) {
+          if (!res.ok) {
             console.log(data.message);
           } else {
             dispatch(signOutSuccess());
           }
-        } catch(error) {
-          console.log(error.message)
+        } catch (error) {
+          console.log(error.message);
         }
       };
   
