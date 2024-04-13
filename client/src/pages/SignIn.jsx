@@ -76,7 +76,7 @@ export default function SignIn() {
                     <Spinner size='sm'/>
                     <span className="pl-3">Loading...</span>
                   </>
-                ) : 'Sign Ip'
+                ) : 'Sign In'
               }
             </Button>
             <OAuth />
